@@ -96,12 +96,13 @@ func getClosestPoint() {
 
 	// Your point
 	fmt.Println(fmt.Sprintf("\n====================================\nYour Latitude  : %v\nYour Longitude : %v", la, lo))
-
-	// Print candidata 5 nearbies
-	for i, v := range nearby[:5] {
-		fmt.Println(fmt.Sprintf("-----------------%d------------------\nName Point     : %v\nDistance       : %.4f Kilometers\nLatitude       : %v\nLogitude       : %v", i+1, v.namePoint, v.dist/1000, v.lat, v.long))
+	if len(nearby) > 0 {
+		// Print candidata 5 nearbies
+		for i, v := range nearby[:5] {
+			fmt.Println(fmt.Sprintf("-----------------%d------------------\nName Point     : %v\nDistance       : %.4f Kilometers\nLatitude       : %v\nLogitude       : %v", i+1, v.namePoint, v.dist/1000, v.lat, v.long))
+		}
+		fmt.Println("====================================")
 	}
-	fmt.Println("====================================")
 }
 
 // Geographic information systems (GIS) Algorithm
